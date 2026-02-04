@@ -83,8 +83,11 @@ The workflow is triggered:
 This file configures Firebase Hosting settings:
 - **public**: Root directory for hosting files (set to `.` for the repository root)
 - **ignore**: Files and directories to exclude from deployment
-- **rewrites**: URL rewriting rules (currently set to serve `index.html` for all routes)
-- **headers**: Cache-Control headers for static assets
+- **cleanUrls**: Enables clean URLs (e.g., `/about` instead of `/about.html`)
+- **headers**: Cache-Control headers for static assets:
+  - Images and icons: 1 year cache (31536000 seconds)
+  - CSS and JavaScript: 1 year cache (31536000 seconds)
+  - HTML files: 1 hour cache (3600 seconds) to allow for quick content updates
 
 ### `.firebaserc`
 
